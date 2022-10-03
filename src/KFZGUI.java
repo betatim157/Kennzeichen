@@ -12,6 +12,7 @@ public class KFZGUI extends JFrame {
     private boolean pruefung;
 
     public KFZGUI(){
+        //GUI Eigenschaften werden bestimmt
      setVisible(true);
      setTitle("KFZGUI");
      setSize(300,180);
@@ -20,15 +21,15 @@ public class KFZGUI extends JFrame {
      setContentPane(mainPanel);
      setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+
         pruefeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pruefung = KFZPruefer.wortUntersuchen(textField1.getText());
                 if(pruefung == true){
-                    textField1.setBackground(Color.GREEN);
-                    setTitle("Yes");
+                    textField1.setBackground(Color.GREEN); //Wenn Pruefung true ist, ist die Prüfung vorbei und das Textfeld wird Grün
                 }else{
-                    textField1.setBackground(Color.RED);
+                    textField1.setBackground(Color.RED); //Pruefung ist false
                 }
             }
         });

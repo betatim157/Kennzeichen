@@ -47,12 +47,13 @@ public class KFZPruefer {
      ziffer.add('9');
 
 
+
     }
     public static void zustandWechseln(char pZeichen)
     {
         switch(zustand){
           case 0: {
-               if(alphabet.contains(pZeichen)){
+               if(alphabet.contains(pZeichen)){ //Geht die Liste durch
                    zustand = 1;
                    break;
               }
