@@ -34,11 +34,11 @@ public class KFZPruefer {
         return correct;   //Ergebnis der Prüfung wird zurück gegeben
     }
 
-    public static boolean durchzaehlen(char p){
+    public static char durchzaehlen(char p){
         if(alphabet.contains(p)){
-           return true;
+           return p;
         }else{
-            return false;
+            return '!';
         }
 
     }
