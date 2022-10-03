@@ -58,7 +58,7 @@ public class KFZPruefer {
                    break;
               }
                if(ziffer.contains(pZeichen)){
-                   zustand = 0;
+                   zustand = -1;
                    break;
                }
                break;
@@ -69,7 +69,7 @@ public class KFZPruefer {
                     break;
                 }
                 if(ziffer.contains(pZeichen)){
-                    zustand = 0;
+                    zustand = -1;
                     break;
                 }
                 break;
@@ -109,7 +109,7 @@ public class KFZPruefer {
             }
             case 5 :{
                 if(alphabet.contains(pZeichen)){
-                    zustand = 0;
+                    zustand = -1;
                 }
                 if(ziffer.contains(pZeichen)){
                     zustand = 6;
@@ -118,7 +118,7 @@ public class KFZPruefer {
             }
             case 6:{
               if(alphabet.contains(pZeichen)){
-                  zustand = 0;
+                  zustand = -1;
                   break;
               }
                 if(ziffer.contains(pZeichen)){
@@ -129,7 +129,7 @@ public class KFZPruefer {
             }
             case 7:{
                 if(alphabet.contains(pZeichen)){
-                    zustand = 0;
+                    zustand = -1;
                     break;
                 }
                 if(ziffer.contains(pZeichen)){
@@ -140,7 +140,7 @@ public class KFZPruefer {
             }
             case 8:{
                 if(alphabet.contains(pZeichen)){
-                    zustand = 0;
+                    zustand = -1;
                     break;
                 }
                 if(ziffer.contains(pZeichen)){
@@ -151,10 +151,10 @@ public class KFZPruefer {
             }
             case 9:{
                 if(alphabet.contains(pZeichen)){
-                    zustand = 0;
+                    zustand = -1;
                 }
                 if(ziffer.contains(pZeichen)){
-                    zustand = 0;
+                    zustand = -1;
                 }
             }
 
