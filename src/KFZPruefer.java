@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+
 public class KFZPruefer {
     private static int zustand = 0;
     private static boolean correct;
+    private static ArrayList<Character> alphabet= new ArrayList<Character>();
     public KFZPruefer(){
+     alphabet.add('a');
+     alphabet.add('b');
 
     }
     public static void zustandWechseln(char pZeichen){
@@ -10,7 +15,7 @@ public class KFZPruefer {
         switch(zustand){
           case 0: {
               switch(pZeichen) {
-                  case : {zustand = 1;} break;
+                  case durchzaehlen(pZeichen) : {zustand = 1;} break;
                   case 'B': {zustand = 0;} break;
               }
           }break;
@@ -27,6 +32,15 @@ public class KFZPruefer {
                 correct = true;
             }
         return correct;   //Ergebnis der Prüfung wird zurück gegeben
+    }
+
+    public static boolean durchzaehlen(char p){
+        if(alphabet.contains(p)){
+           return true;
+        }else{
+            return false;
+        }
+
     }
 
 }
