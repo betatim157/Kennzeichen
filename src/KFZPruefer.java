@@ -5,17 +5,52 @@ public class KFZPruefer {
     private static boolean correct;
     private static ArrayList<Character> alphabet= new ArrayList<Character>();
     private static ArrayList<Character> ziffer = new ArrayList<Character>();
-    public KFZPruefer(){
-     alphabet.add('a');
-     alphabet.add('b');
-     alphabet.add('c');
-
+    public KFZPruefer()
+    {
+     //Erstellen des Alphabets
+     alphabet.add('A');
+     alphabet.add('B');
+     alphabet.add('C');
+     alphabet.add('D');
+     alphabet.add('E');
+     alphabet.add('F');
+     alphabet.add('G');
+     alphabet.add('H');
+     alphabet.add('I');
+     alphabet.add('J');
+     alphabet.add('K');
+     alphabet.add('L');
+     alphabet.add('M');
+     alphabet.add('N');
+     alphabet.add('O');
+     alphabet.add('P');
+     alphabet.add('Q');
+     alphabet.add('R');
+     alphabet.add('S');
+     alphabet.add('T');
+     alphabet.add('U');
+     alphabet.add('V');
+     alphabet.add('W');
+     alphabet.add('X');
+     alphabet.add('Y');
+     alphabet.add('Z');
+      //Erstellen der zugelassenen Ziffern
+     ziffer.add('0');
+     ziffer.add('1');
+     ziffer.add('2');
+     ziffer.add('3');
+     ziffer.add('4');
+     ziffer.add('5');
+     ziffer.add('6');
+     ziffer.add('7');
+     ziffer.add('8');
+     ziffer.add('9');
 
 
     }
-    public static void zustandWechseln(char pZeichen){
+    public static void zustandWechseln(char pZeichen)
+    {
       boolean contains = false;
-
         switch(zustand){
           case 0: {
                if(alphabet.contains(pZeichen)){
@@ -79,21 +114,55 @@ public class KFZPruefer {
                 if(ziffer.contains(pZeichen)){
                     zustand = 6;
                 }
+                break;
             }
             case 6:{
-
+              if(alphabet.contains(pZeichen)){
+                  zustand = 0;
+                  break;
+              }
+                if(ziffer.contains(pZeichen)){
+                    zustand = 7;
+                    break;
+                }
+              break;
             }
+            case 7:{
+                if(alphabet.contains(pZeichen)){
+                    zustand = 0;
+                    break;
+                }
+                if(ziffer.contains(pZeichen)){
+                    zustand = 8;
+                    break;
+                }
+                break;
+            }
+            case 8:{
+                if(alphabet.contains(pZeichen)){
+                    zustand = 0;
+                    break;
+                }
+                if(ziffer.contains(pZeichen)){
+                    zustand = 0;
+                    break;
+                }
+                break;
+            }
+
       }
     }
 
-    public static boolean wortUntersuchen(String pEingabe){
+    public static boolean wortUntersuchen(String pEingabe) //Bsp AA7
+    {
              correct =false;
             for(int i = 0; i<pEingabe.length(); i++){    //Jeden Buchstaben einzeln Testen
                 zustandWechseln(pEingabe.charAt(i));
             }
-            if(zustand ==9){              //Wenn alle Zustände druchgegagnen sind muss das Kennzeichen korrekt sein
+            if(zustand ==6 || zustand==7 || zustand==8){              //Wenn alle Zustände druchgegagnen sind muss das Kennzeichen korrekt sein
                 correct = true;
             }
+            zustand = 0; //Anfangszustand
         return correct;   //Ergebnis der Prüfung wird zurück gegeben
     }
 
