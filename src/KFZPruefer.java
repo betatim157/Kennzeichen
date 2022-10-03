@@ -144,10 +144,18 @@ public class KFZPruefer {
                     break;
                 }
                 if(ziffer.contains(pZeichen)){
-                    zustand = 0;
+                    zustand = 9;
                     break;
                 }
                 break;
+            }
+            case 9:{
+                if(alphabet.contains(pZeichen)){
+                    zustand = 0;
+                }
+                if(ziffer.contains(pZeichen)){
+                    zustand = 0;
+                }
             }
 
       }
@@ -159,7 +167,7 @@ public class KFZPruefer {
             for(int i = 0; i<pEingabe.length(); i++){    //Jeden Buchstaben einzeln Testen
                 zustandWechseln(pEingabe.charAt(i));
             }
-            if(zustand ==6 || zustand==7 || zustand==8){              //Wenn alle Zustände druchgegagnen sind muss das Kennzeichen korrekt sein
+            if(zustand ==6 || zustand==7 || zustand==8 || zustand == 9){              //Wenn alle Zustände druchgegagnen sind muss das Kennzeichen korrekt sein
                 correct = true;
             }
             zustand = 0; //Anfangszustand
