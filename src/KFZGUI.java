@@ -26,6 +26,7 @@ public class KFZGUI extends JFrame {
                 pruefung = KFZPruefer.wortUntersuchen(textField1.getText());
                 if(pruefung == true){
                     textField1.setBackground(Color.GREEN);
+                    setTitle("Yes");
                 }else{
                     textField1.setBackground(Color.RED);
                 }

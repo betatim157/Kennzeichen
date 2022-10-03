@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class KFZPruefer {
     private static int zustand = 0;
     private static boolean correct;
-    private static ArrayList<Character> alphabet= new ArrayList<Character>();
+    private static ArrayList<Character> alphabet= new ArrayList<Character>(); //Arraylist
     private static ArrayList<Character> ziffer = new ArrayList<Character>();
     public KFZPruefer()
     {
@@ -50,7 +50,6 @@ public class KFZPruefer {
     }
     public static void zustandWechseln(char pZeichen)
     {
-      boolean contains = false;
         switch(zustand){
           case 0: {
                if(alphabet.contains(pZeichen)){
@@ -167,20 +166,12 @@ public class KFZPruefer {
             for(int i = 0; i<pEingabe.length(); i++){    //Jeden Buchstaben einzeln Testen
                 zustandWechseln(pEingabe.charAt(i));
             }
-            if(zustand ==6 || zustand==7 || zustand==8 || zustand == 9){              //Wenn alle Zustände druchgegagnen sind muss das Kennzeichen korrekt sein
+            if(zustand == 6 || zustand == 7 || zustand== 8 || zustand == 9){      //Wenn alle Zustände druchgegagnen sind muss das Kennzeichen korrekt sein
                 correct = true;
             }
             zustand = 0; //Anfangszustand
         return correct;   //Ergebnis der Prüfung wird zurück gegeben
     }
 
-    /*public static boolean durchzaehlen(char p){
-        if(alphabet.contains(p)){
-           return true;
-        }else{
-            return false;
-        }
-
-    }*/
 
 }
